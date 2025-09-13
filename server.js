@@ -20,7 +20,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "https://ink-share-app.vercel.app/",
+  origin: "*",
   credentials: true,
 }));
 app.use(express.json());
@@ -35,7 +35,7 @@ connectToDB();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://ink-share-app.vercel.app/"],
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   },
