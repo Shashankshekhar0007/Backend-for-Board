@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-const SECRET_KEY = "shashank"; // Replace with a secure key
+const SECRET_KEY = process.env.SECRET_KEY; // Replace with a secure key
 
 exports.authMiddleware = (req, res, next) => {
   const token = req.header("Authorization");
